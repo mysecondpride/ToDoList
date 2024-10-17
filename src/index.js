@@ -1,17 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import { createRoot } from "react-dom/client"; // Import createRoot from react-dom/client
+import App from "./App.js";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import { configureStore } from "@reduxjs/toolkit";
+import { Provider } from "react-redux";
+
+//import semua combineReducer
+import allReducer from "./redux/reducer/index.js"; //ini adalah file combine reducer yang isinya adalah function reducer
+
+// Get the root element from the DOM
+const rootElement = document.getElementById("root");
+
+// import { thunk } from "redux-thunk";
+
+const globalState = configureStore({
+  reducer: allReducer,
+  // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
+});
+
+// Create the root
+const root = createRoot(rootElement);
+
+// Render the App component
 root.render(
-  <React.StrictMode>
+  <Provider store={globalState}>
     <App />
-  </React.StrictMode>
+  </Provider>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

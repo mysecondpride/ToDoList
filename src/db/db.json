@@ -1,0 +1,34 @@
+{
+  "activities": [
+    {
+      "id": "4656",
+      "nama": "makan",
+      "isCompleted": true
+    },
+    {
+      "id": "2bc8",
+      "nama": "memancing",
+      "isCompleted": false
+    },
+    {
+      "id": "6fc7",
+      "nama": "ooo",
+      "isCompleted": true
+    },
+    {
+      "id": "2302",
+      "nama": " ",
+      "isCompleted": true
+    },
+    {
+      "id": "f0f1",
+      "nama": "tahlilan",
+      "isCompleted": true
+    },
+    {
+      "id": "879d",
+      "nama": "ke rumah ",
+      "isCompleted": false
+    }
+  ]
+}
